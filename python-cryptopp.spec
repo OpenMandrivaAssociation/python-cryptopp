@@ -9,7 +9,7 @@ License:        GPLv2+
 Group:          Development/Python
 Source:         http://pypi.python.org/packages/source/p/pycryptopp/%{modname}-%{version}.tar.gz
 %{py_requires}
-BuildRequires:  libcryptopp-devel python-setuptools #python-xml
+BuildRequires:  libcryptopp-devel python-setuptools python-pyxml
 Patch0:         pycryptopp-0.5.29-disable-w-flag.patch
 
 %description
