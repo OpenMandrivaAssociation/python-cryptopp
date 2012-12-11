@@ -9,7 +9,9 @@ License:        GPLv2+
 Group:          Development/Python
 Source:         http://pypi.python.org/packages/source/p/pycryptopp/%{modname}-%{version}.tar.gz
 %{py_requires}
-BuildRequires:  libcryptopp-devel python-setuptools python-pyxml
+BuildRequires:  pkgconfig(cryptopp)
+BuildRequires:  python-setuptools
+BuildRequires:  python-pyxml
 Patch0:         pycryptopp-0.5.29-disable-w-flag.patch
 
 %description
@@ -39,11 +41,15 @@ rm -r \
 %check
 python setup.py test
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc COPYING.GPL COPYING.TGPPL.html ChangeLog NEWS.rst README.txt
 %{python_sitearch}/%{modname}
 %{python_sitearch}/%{modname}-%{version}-*.egg-info
+
+
+%changelog
+* Tue Nov 29 2011 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.5.29-1
++ Revision: 735407
+- Fix BR
+- imported package python-cryptopp
+
