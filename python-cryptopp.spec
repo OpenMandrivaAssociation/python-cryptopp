@@ -1,13 +1,14 @@
 %define modname pycryptopp
 
 Name:           python-cryptopp
-Version:        0.5.29
+Version:        0.6.0.1206569328141510525648634803928199668821045408958
 Release:        1
 Summary:        Python Wrappers for the Crypto++ Library
+
 Url:            http://allmydata.org/trac/pycryptopp
 License:        GPLv2+
 Group:          Development/Python
-Source:         http://pypi.python.org/packages/source/p/pycryptopp/%{modname}-%{version}.tar.gz
+Source:         http://pypi.python.org/packages/source/p/%{modname}/%{modname}-%{version}.tar.gz
 %{py_requires}
 BuildRequires:  pkgconfig(cryptopp)
 BuildRequires:  python-setuptools
@@ -35,21 +36,16 @@ python setup.py install --single-version-externally-managed --prefix=%{_prefix} 
 rm -r \
   %{buildroot}%{_prefix}/embeddedcryptopp \
   %{buildroot}%{_datadir}/doc/%{modname} \
-  %{buildroot}%{python_sitearch}/%{modname}/test \
-  %{buildroot}%{python_sitearch}/%{modname}/testvectors
+  %{buildroot}%{py_platsitedir}/%{modname}/test \
+  %{buildroot}%{py_platsitedir}/%{modname}/testvectors
 
 %check
 python setup.py test
 
 %files
 %doc COPYING.GPL COPYING.TGPPL.html ChangeLog NEWS.rst README.txt
-%{python_sitearch}/%{modname}
-%{python_sitearch}/%{modname}-%{version}-*.egg-info
+%{py_platsitedir}/%{modname}
+%{py_platsitedir}/%{modname}-%{version}-*.egg-info
 
 
-%changelog
-* Tue Nov 29 2011 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.5.29-1
-+ Revision: 735407
-- Fix BR
-- imported package python-cryptopp
 
