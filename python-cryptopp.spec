@@ -34,7 +34,6 @@ python setup.py build --disable-embedded-cryptopp
 %install
 python setup.py install --single-version-externally-managed --prefix=%{_prefix} --root=%{buildroot}
 rm -r \
-  %{buildroot}%{_prefix}/embeddedcryptopp \
   %{buildroot}%{_datadir}/doc/%{modname} \
   %{buildroot}%{py_platsitedir}/%{modname}/test \
   %{buildroot}%{py_platsitedir}/%{modname}/testvectors
@@ -43,7 +42,7 @@ rm -r \
 python setup.py test
 
 %files
-%doc COPYING.GPL COPYING.TGPPL.html ChangeLog NEWS.rst README.txt
+%doc COPYING.GPL COPYING.TGPPL.html ChangeLog NEWS.rst
 %{py_platsitedir}/%{modname}
 %{py_platsitedir}/%{modname}-%{version}-*.egg-info
 
