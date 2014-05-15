@@ -5,6 +5,7 @@ Version:        0.6.0.1206569328141510525648634803928199668821045408958
 Release:        1
 Summary:        Python Wrappers for the Crypto++ Library
 
+
 Url:            http://allmydata.org/trac/pycryptopp
 License:        GPLv2+
 Group:          Development/Python
