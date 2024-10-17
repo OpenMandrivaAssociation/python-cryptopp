@@ -6,7 +6,7 @@ Release:        2
 Summary:        Python Wrappers for the Crypto++ Library
 
 
-Url:            http://allmydata.org/trac/pycryptopp
+Url:            https://allmydata.org/trac/pycryptopp
 License:        GPLv2+
 Group:          Development/Python
 Source:         http://pypi.python.org/packages/source/p/%{modname}/%{modname}-%{version}.tar.gz
